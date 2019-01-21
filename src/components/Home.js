@@ -1,10 +1,13 @@
 import React from 'react';
+import Logger from './utils/Logger';
 import { shuffle } from './utils/Helper';
+
+const logger = new Logger('Home');
 
 class Home extends React.Component {
     render() {
         let shuffledArray = shuffle(["1", "2", "3"]);
-        console.log("shuffledArray", shuffledArray);
+        logger.log("shuffledArray", shuffledArray);
 
         return (
             <div id="home-container" className="container">

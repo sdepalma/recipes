@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import Home from './Home';
 import Page from './Page';
 
@@ -9,8 +9,16 @@ const App = () => (
         <div id="main">
             <nav>
                 <ul>
-                    <Link to="/">Home</Link>
-                    <Link to="/page">Page</Link>
+                    <li>
+                        <NavLink exact={true} activeClassName='active' to='/'>
+                            Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink exact={true} activeClassName='active' to='/page'>
+                            Page
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
             <Switch>
