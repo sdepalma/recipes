@@ -1,19 +1,24 @@
-import React, {PropTypes} from 'react';
-import Nav from './Nav';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import Page from './Page';
 
-class App extends React.Component {
-    render() {
-        return (
-            <div id="main">
-                <Nav />
-                {this.props.children}
-            </div>
-        );
-    };
-}
-
-App.propTypes = {
-    children: PropTypes.object.isRequired
-};
+const App = () => (
+    <Router>
+        <div id="main">
+            <nav>
+                <ul>
+                    <Link to="/">Home</Link>
+                    <Link to="/page">Page</Link>
+                </ul>
+            </nav>
+            <Switch>
+                <Route exact path='/' component={Home} />
+                <Route path='/page' component={Page} />
+            </Switch>
+        </div>
+    </Router>
+);
 
 export default App;
