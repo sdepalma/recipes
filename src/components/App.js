@@ -23,7 +23,8 @@ const App = () => (
             </nav>
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route path='/page' component={Page} />
+                <Route exact path='/page' component={Page} />
+                <Route path={`/page/:subpage`} component={Page} />
             </Switch>
         </div>
     </Router>

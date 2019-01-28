@@ -32,8 +32,8 @@ const Footer = (props) => {
 }
 
 class Page extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.logger = new Logger('Page Main');
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleInputSubmit = this.handleInputSubmit.bind(this);
@@ -103,6 +103,10 @@ class Page extends React.Component {
                 <Header name={component.state.names.header} />
 
                 <div id="page-content" className="content">
+                    <div>
+                        <p>URL Variable: {this.props.match.params.subpage}</p>
+                    </div>
+
                     <div>
                         <label>Add page name to select</label>
                         <form id='add-name' onSubmit={this.handleInputSubmit}>
