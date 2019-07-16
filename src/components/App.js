@@ -7,6 +7,9 @@ import Page from './Page';
 const App = () => (
     <Router>
         <div id="main">
+            <header>
+                <h1>React/Gulp Boilerplate</h1>
+            </header>
             <nav>
                 <ul>
                     <li>

@@ -1,5 +1,3 @@
-@font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -37,52 +35,75 @@ q:before, q:after {
 	content: none;
 }
 table {
-  width:100%;
 	border-collapse: collapse;
 	border-spacing: 0;
-
-  td {
-    // border: solid 1px black;
-    vertical-align: middle;
-  }
-
-  th {
-    font-size: 1.8em;
-    font-weight: bold;
-  }
 }
 body a, span, tr, td {
   white-space: pre;
 }
 
-.active {
-	font-weight: bold;
-	text-decoration: none;
-}
+@color-primary: #7F8688;
+@color-secondary: #929D9E;
+@color-tertiary: #A89B40;
+@color-yellow: #F3E367;
+@color-grey: #E7E9EA;
+@color-charcoal: #26292C;
 
-#main > nav {
-	padding: 10px;
+body {
+	font-family: Gill Sans, sans-serif;
+	background-color: @color-secondary;
+	color: @color-charcoal;
 
-	ul {
-		overflow: hidden;
+	a {
+		color: @color-yellow;
+		text-decoration: none;
+	}
 
-		li {
-			display: inline-block;
-			margin-right: 10px;
+	#main > header {
+		padding: 20px;
+		background-color: @color-primary;
+
+		h1 {
+			font-size: 1.4em;
+			font-weight: bold;
 		}
 	}
-}
 
-#main {
-	.container {
-		padding: 10px;
+	#main > nav {
+		padding: 0px 10px;
+		border-bottom: solid 1px @color-primary;
 
-		.content {
-			padding: 10px 0;
+		ul {
+			overflow: hidden;
+
+			li {
+				display: inline-block;
+
+				a {
+					color: @color-grey;
+					display: block;
+					padding: 10px;
+				}
+
+				a.active {
+					color: @color-tertiary;
+					background-color: @color-grey;
+				}
+			}
 		}
+	}
 
-		.content > div {
-			padding: 10px 0;
+	#main {
+		.container {
+			padding: 10px 20px;
+
+			.content {
+				padding: 10px 0;
+			}
+
+			.content > div {
+				padding: 10px 0;
+			}
 		}
 	}
 }
